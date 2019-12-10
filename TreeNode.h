@@ -1,4 +1,3 @@
-#pragma once
 
 #include "SoccerPlayerData.h"
 #include <iostream>
@@ -20,13 +19,13 @@ public:
 		this->m_left = left;
 		this->m_right = right;
 	}
-	
+
 	TreeNode* getLeftNode() const { return m_left; }
 	TreeNode* getRightNode() const { return m_right; }
 
 	friend std::ostream& operator<<(std::ostream& os, const TreeNode* node)
 	{
-		if(node != NULL)
+		if (node != NULL)
 			os << node->m_data;
 		return os;
 	}

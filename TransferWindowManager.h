@@ -1,9 +1,10 @@
-#pragma once
 
 #include "BinarySearchTree.h"
 
 #include <iostream>
 #include <string>
+#include <queue>
+#include <vector>
 
 class TransferWindowManager
 {
@@ -34,8 +35,25 @@ public:
 
 	TransferWindowManager(std::string file_dir, int budget);
 	
+
 	friend std::ostream& operator<<(std::ostream& os, const TransferWindowManager& manager);
 
+	//void removePlayer(SoccerPlayerData data);
+
 	SoccerTeam getBestTeam();
+
+	//std::priority_queue<SoccerPlayerData, std::vector<SoccerPlayerData>, > all_player_queue;
+
+	SoccerPlayerData split(const std::string &s);
+
+	void insertPlayer(SoccerPlayerData data);
+
+	struct cmp
+	{
+		bool operator()(SoccerPlayerData a, SoccerPlayerData b)
+		{
+			return a.m_ability > b.m_ability;
+		}
+	};
 };
 
